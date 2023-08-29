@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DASHBOARD VELOCITY</title>
+    <link rel="shortcut icon" href="/images/logo-mb.png" type="image/png">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <!-- GOOGLE FONT -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <!-- BOXICONS -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- APP CSS -->
+    <link rel="stylesheet" href="./css/grid.css">
+    <link rel="stylesheet" href="./css/app.css">
+    <link rel="icon" href="images/Pitb.jpg">
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+        <div class="sidebar-logo">
+            <img src="images/Pitb.jpg" alt="Comapny logo">
+            <div class="sidebar-close" id="sidebar-close">
+                <i class='bx bx-left-arrow-alt'></i>
+            </div>
+        </div>
+        <div class="sidebar-user">
+            <div class="sidebar-user-info"><i class="fa-solid fa-user-secret"></i>
+<!--                <img src="" alt="User picture" class="profile-image">-->
+                <div class="sidebar-user-name">
+                    Hassan Rasool
+                </div>
+            </div>
+            <button class="btn btn-outline">
+                <i class='bx bx-log-out bx-flip-horizontal'></i>
+            </button>
+        </div>
+                 <!-- SIDEBAR MENU BUTTONSS -->
+                 
+        <ul class="sidebar-menu">
+            <li>
+                <a href="#" class="active">
+                    <img src="images/dashboard-solid-24.png">
+                    <span>dashboard </span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="m14.49 20.937 5.381-1.166S17.93 6.633 17.914 6.546c-.016-.086-.086-.144-.158-.144s-1.439-.101-1.439-.101-.949-.949-1.064-1.05c-.027-.029-.057-.043-.086-.058l-.677 15.744zm.446-15.772c-.016 0-.043.014-.057.014-.016 0-.217.059-.533.158-.318-.919-.879-1.768-1.871-1.768h-.086c-.289-.361-.633-.519-.936-.519-2.316 0-3.426 2.892-3.77 4.359-.892.275-1.538.476-1.613.505-.504.158-.517.172-.574.648-.057.344-1.367 10.489-1.367 10.489l10.117 1.899.69-15.785zm-2.635.704v.102c-.559.173-1.178.36-1.783.547.346-1.323.992-1.972 1.553-2.217.146.375.23.878.23 1.568zm-.92-2.2c.1 0 .201.028.303.102-.732.344-1.539 1.222-1.871 2.978a59.11 59.11 0 0 1-1.411.432c.389-1.339 1.325-3.512 2.979-3.512zm.402 7.812s-.604-.315-1.322-.315c-1.08 0-1.123.676-1.123.849 0 .921 2.418 1.28 2.418 3.453 0 1.712-1.08 2.806-2.547 2.806-1.756 0-2.648-1.094-2.648-1.094l.475-1.554s.922.792 1.697.792a.693.693 0 0 0 .721-.69c0-1.209-1.986-1.268-1.986-3.252 0-1.669 1.195-3.295 3.627-3.295.936 0 1.395.272 1.395.272l-.707 2.028zm.922-7.281c.518.06.85.648 1.064 1.311-.258.087-.547.173-.863.273v-.187c0-.561-.072-1.022-.201-1.397z"></path></svg>
+                    <span>sales</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAbxJREFUSEvt1E2IjlEUB/DfsLCRMgtRElMaJWU28plmMU1ZKI1Ss7JQ7OSjfCxJlKKslBrNBgszWwtllAUyJSFWTE3UlGxIKaFTd+rpep73ecyrmdR7Vrfz8f+f87/n3i4LZF0LxKtDPG/Kd6T+76Rei2V4hZ9Num/3jpfiLgYT2Wvsxbs68naJr+NwRvIMW/6WeDOOpqIreFkDMIMVJTk9eN+qtjhxL15gSSr4ho2YagHwGctL4tvwpCnxMcSURYvpr1UAxDKFImtK4jHtHrytIi9OfAB3ssRo5ERJ8WLcw0CKPUdfkndd8n3BEO6XkReJF+EWooGincGlzHcDh5JvFAfTOfBO4QIC71fa8Gj0HG7O4pRtdSzGJoygu7Bos5OfxOXkn8ROfM8a25Ge2crMvxVPw9fqOa3HA6xOxfFepxG7EPYJ8Qo+VNzjaVzMYsdxtY444qswgdj4ov3ArprN3Y2HWd12PG5CHDkh5aMMYAz7KyYtuo/gLKLR83V3nONtwJvMeRvDDYgrU5p+mePYl1C+oh+xWHO2psSRF59/fBYh88c5M6bCpsTt8vxR3yH+55JWAXaknjepfwMkMEMfmahCwQAAAABJRU5ErkJggg=="/>
+                    <span>analytic</span>
+                </a>
+            </li>
+            <li class="sidebar-submenu">
+                <a href="#" class="sidebar-menu-dropdown">
+                   <i class="fa-regular fa-user"></i>
+                    <span>account</span>
+                    <div class="dropdown-icon"></div>
+                </a>
+                <ul class="sidebar-menu sidebar-menu-dropdown-content">
+                    <li>
+                        <a href="#">
+                           <i class="fa-solid fa-pen"></i>
+                            Edit Profile
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                           <i class="fa-solid fa-gears"></i>
+                            Account Settings
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                           <i class="fa-solid fa-money-bill"></i>
+                            Billing
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="sidebar-submenu">
+                <a href="#" class="sidebar-menu-dropdown">
+                    <i class="fa-solid fa-diagram-project"></i>
+                    <span>project</span>
+                    <div class="dropdown-icon"></div>
+                </a>
+                <ul class="sidebar-menu sidebar-menu-dropdown-content">
+                    <li>
+                        <a href="#">
+                           <i class="fa-solid fa-list"></i>
+                            list
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                           <i class="fa-solid fa-plus"></i>
+                            add project
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="sidebar-submenu">
+                <a href="#" class="sidebar-menu-dropdown">
+                    <i class='bx bx-category'></i>
+                    <span>E-Commerce</span>
+                    <div class="dropdown-icon"></div>
+                </a>
+                <ul class="sidebar-menu sidebar-menu-dropdown-content">
+                    <li>
+                        <a href="#">
+                           <i class="fa-solid fa-ellipsis-vertical"></i>
+                            list product
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                           <i class="fa-solid fa-shirt"></i>
+                            add product
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                           <i class="fa-solid fa-cart-shopping"></i>
+                            orders
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa-regular fa-envelope"></i>
+                    <span>mail</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa-solid fa-headset"></i>
+                    <span>chat</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa-regular fa-calendar"></i>
+                    <span>calendar</span>
+                </a>
+            </li>
+            <li class="sidebar-submenu">
+                <a href="#" class="sidebar-menu-dropdown">
+                    <i class='bx bx-cog'></i>
+                    <span>settings</span>
+                    <div class="dropdown-icon"></div>
+                </a>
+                <ul class="sidebar-menu sidebar-menu-dropdown-content">
+                    <li>
+                        <!--Darkmode-->
+                        <a href="#" class="darkmode-toggle" id="darkmode-toggle">
+                           <i class="fa-solid fa-moon"></i>
+                            darkmode
+                            <span class="darkmode-switch"></span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <!-- SIDEBAR KHATAM -->
+    </div>
+    <!-- END SIDEBAR -->
+
+    <!-- MAIN CONTENT -->
+    <div class="main">
+        <div class="main-header">
+            <div class="mobile-toggle" id="mobile-toggle">
+                 <i class='bx bx-menu-alt-right'></i>
+                </div>
+            <div class="main-title">
+                <b>dashboard Velocity</b>
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="row">
+                <div class="col-3 col-md-6 col-sm-12">
+                    <div class="box box-hover">
+                        <!-- COUNTER -->
+                        <div class="counter">
+                            <div class="counter-title">
+                                <h3 style="text-align: center"><u>Total No. Order</u></h3>
+                            </div>
+                            <div class="counter-info">
+                                <div class="counter-count">
+                                    1596704
+                                </div>
+                                <i class="fa-solid fa-basket-shopping"></i>
+                            </div>
+                        </div>
+                        <!-- END COUNTER -->
+                    </div>
+                </div>
+                
+                <div class="col-4 col-md-6 col-sm-12">
+                    <div class="box box-hover">
+                        <!-- COUNTER -->
+                        <div class="counter">
+                            <div class="counter-title">
+                               <h3 style="text-align: center"><u>
+                                   Total Profit</u></h3>
+                            </div>
+                            <div class="counter-info">
+                                <div class="counter-count">
+                                    $17.72M
+                                </div>
+                                <i class="fa-solid fa-money-check-dollar"></i>
+                            </div>
+                        </div>
+                        <!-- END COUNTER -->
+                    </div>
+                </div>
+                <div class="col-5 col-md-6 col-sm-12">
+                    <div class="box box-hover">
+                        <!-- COUNTER -->
+                        <div class="counter">
+                            <div class="counter-title">
+                               <h3 style="text-align: center"><u>
+                                   Total Audiance Reach</u></h3>
+                            </div>
+                            <div class="counter-info">
+                                <div class="counter-count">
+                                    704570 / Day
+                                </div>
+                                <i class="fa-solid fa-users-rectangle"></i>
+                            </div>
+                        </div>
+                        
+                        <!-- END COUNTER -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-3 col-md-6 col-sm-12">
+                   
+                   
+                    <!-- TOP PRODUCT -->
+                    <div class="box f-height">
+                        <div class="box-header">
+                            <u>Gross Products</u>
+                        </div>
+                        <div class="box-body">
+                            <ul class="product-list">
+                                <li class="product-list-item">
+                                    <div class="item-info">
+                                        <img src="images/shirt.png">
+                                        <div class="item-name">
+                                            <div class="product-name">Shirts</div>
+                                            <div class="text-second">Cloths</div>
+                                        </div>
+                                    </div>
+                                    <div class="item-sale-info">
+                                        <div class="text-second">Sales</div>
+                                        <div class="product-sales">$5,000</div>
+                                    </div>
+                                </li>
+                                <li class="product-list-item">
+                                    <div class="item-info">
+                                        <img src="images/jordan.png">
+                                        <div class="item-name">
+                                            <div class="product-name">sneaker</div>
+                                            <div class="text-second">Clothing</div>
+                                        </div>
+                                    </div>
+                                    <div class="item-sale-info">
+                                        <div class="text-second">Sales</div>
+                                        <div class="product-sales">$5,298</div>
+                                    </div>
+                                </li>
+                                <li class="product-list-item">
+                                    <div class="item-info">
+                                        <img src="./images/sony-wireless-noise-cancelling-headphones-wh-1000xm4-pakistan-priceoye-cj38h.jpg">
+                                        <div class="item-name">
+                                            <div class="product-name">headphones</div>
+                                            <div class="text-second">Devices</div>
+                                        </div>
+                                    </div>
+                                    <div class="item-sale-info">
+                                        <div class="text-second">Sales</div>
+                                        <div class="product-sales">$3000</div>
+                                    </div>
+                                </li>
+                                <li class="product-list-item">
+                                    <div class="item-info">
+                                        <img src="images/download%20(1).jpg">
+                                        <div class="item-name">
+                                            <div class="product-name">Backpack</div>
+                                            <div class="text-second">Bags</div>
+                                        </div>
+                                    </div>
+                                    <div class="item-sale-info">
+                                        <div class="text-second">Sales</div>
+                                        <div class="product-sales">$5430</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- TOP PRODUCT -->
+                </div>
+                <div class="col-4 col-md-6 col-sm-12">
+                    <!-- CATEGORY CHART -->
+                    <div class="box f-height">
+                       <div class="box-header">
+                           <u>percentage of Sales</u>
+                       </div>
+                        <div class="box-body">
+                            <div id="category-chart"></div>
+                        </div>
+                    </div>
+                    <!-- END CATEGORY CHART -->
+                </div>
+                <div class="col-5 col-md-12 col-sm-12">
+                    <!-- CUSTOMERS CHART -->
+                    <div class="box f-height">
+                        <div class="box-header">
+                            <u>Audience Type</u>
+                        </div>
+                        <div class="box-body">
+                            <div id="customer-chart"></div>
+                        </div>
+                    </div>
+                    <!-- END CUSTOMERS CHART -->
+                    
+                    
+                </div>
+                <div class="col-12">
+                    <!-- ORDERS TABLE -->
+                    <div class="box">
+                        <div class="box-header">
+                            Recent orders
+                        </div>
+                        <div class="box-body overflow-scroll">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Customer</th>
+                                        <th>Date</th>
+                                        <th>Order status</th>
+                                        <th>Payment status</th>
+                                        <th>Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>#1234</td>
+                                        <td>
+                                            <div class="order-owner">
+                                                <img src="./images/icons8-account-94.png">
+                                                <span>Hassan Rasool</span>
+                                            </div>
+                                        </td>
+                                        <td>1947-8-14</td>
+                                        <td>
+                                            <span class="order-status order-ready">
+                                                Ready
+                                            </span>
+                                        </td>
+                                        
+                                        <td>
+                                            <div class="payment-status payment-pending">
+                                                <div class="dot"></div>
+                                                <span>Pending</span>
+                                            </div>
+                                        </td>
+                                        <td>$302</td>
+                                    </tr><hr style="width: 50%; margin: auto;">
+                                    <tr>
+                                        <td>#1234</td>
+                                        <td>
+                                            <div class="order-owner">
+                                                <img src="./images/icons8-account-94%20(1).png" alt="user image">
+                                                <span>Uzair Sarwar</span>
+                                            </div>
+                                        </td>
+                                        <td>1947-8-14</td>
+                                        <td>
+                                            <span class="order-status order-shipped">
+                                                Shipped
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <div class="payment-status payment-paid">
+                                                <div class="dot"></div>
+                                                <span>Paid</span>
+                                            </div>
+                                        </td>
+                                        <td>$302</td>
+                                    </tr>
+                                    <tr>
+                                        <td>#1234</td>
+                                        <td>
+                                            <div class="order-owner">
+                                                <img src="./images/icons8-female-user-94%20(1).png" alt="user image">
+                                                <span>wajiha Faiz</span>
+                                            </div>
+                                        </td>
+                                        <td>1947-8-14</td>
+                                        <td>
+                                            <span class="order-status order-shipped">
+                                                Shipped
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <div class="payment-status payment-paid">
+                                                <div class="dot">
+                                                    
+                                                </div>
+                                                <span>Paid</span>
+                                            </div>
+                                        </td>
+                                        <td>$302</td>
+                                    </tr>
+                                    <tr>
+                                        <td>#1234</td>
+                                        <td>
+                                            <div class="order-owner">
+                                                <img src="./images/icons8-female-user-94.png" alt="user image">
+                                                <span>Sameen Khan</span>
+                                            </div>
+                                        </td>
+                                        <td>1947-8-14</td>
+                                        <td>
+                                            <span class="order-status order-shipped">
+                                                Shipped
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <div class="payment-status payment-paid">
+                                                <div class="dot"></div>
+                                                <span>Paid</span>
+                                            </div>
+                                        </td>
+                                        <td>$302</td>
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- END ORDERS TABLE -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END MAIN CONTENT -->
+
+    <div class="overlay"></div>
+
+    <!-- SCRIPT -->
+    <!--FETCH API-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    <!-- APEX CHART -->
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <!-- APP JS -->
+    <script src="./js/app.js"></script>
+
+</body>
+
+</html>
