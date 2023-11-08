@@ -8,5 +8,5 @@
 # Menu Responsive
 ![DASHBOARD 2 RES](https://github.com/HassanRasool1/DASHBOARD-HTML-CSS-JS/assets/109318661/99e69d44-5238-4e9e-b178-73ae3bb33720)
 
-<h2>Graphs Responsive</h2>
+#<h2>Graphs Responsive</h2>
 ![ASD](https://github.com/HassanRasool1/DASHBOARD-HTML-CSS-JS/assets/109318661/8e060b63-3ded-46c9-9971-a33a03c969dd)
