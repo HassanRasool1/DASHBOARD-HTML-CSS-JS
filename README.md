@@ -1,4 +1,8 @@
 # DASHBOARD-HTML-CSS-JS
+
+A Dashboard made up by using pure Java Script,charts from Apex charts and CSV file Data.
+its a Private Dashbard model Using Data Directly from the Continously updating data from backend using Fetch.Private Internal Account Dashboard Interactive model for Firm PITB (Punjab Information Technology board).
+
 # Hero
 ![Dashboard](https://github.com/HassanRasool1/DASHBOARD-HTML-CSS-JS/assets/109318661/f8edc294-60e2-4f62-b550-09ae3544cca6)
 
